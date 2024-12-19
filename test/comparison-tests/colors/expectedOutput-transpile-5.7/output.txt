@@ -1,12 +1,6 @@
 asset bundle.js 1.38 KiB [emitted] (name: main)
 ./app.ts 14 bytes [built] [code generated] [2 errors]
 
-ERROR in app.ts
-./app.ts 1:6-8
-[tsl] ERROR in app.ts(1,7)
-      TS1005: ',' expected.
-ts-loader-default_94b2ce3d1ca5f363
-
 ERROR in ./app.ts 2:1
 Module parse failed: Unexpected token (2:1)
 File was processed with these loaders:
@@ -15,5 +9,19 @@ You may need an additional loader to handle the result of these loaders.
 | var a;
 >  == 0;
 |
+
+ERROR in ./app.ts
+Module Error (from ../../index.js):
+[tsl] ERROR in app.ts(1,7)
+      TS1005: ',' expected.
+Error: [tsl] ERROR in app.ts(1,7)
+      TS1005: ',' expected.
+    at makeError (dist/utils.js:105:19)
+    at dist/utils.js:77:27
+    at Array.map (<anonymous>)
+    at formatErrors (dist/utils.js:60:14)
+    at getTranspilationEmit (dist/index.js:428:49)
+    at successLoader (dist/index.js:38:11)
+    at Object.loader (dist/index.js:23:5)
 
 webpack compiled with 2 errors

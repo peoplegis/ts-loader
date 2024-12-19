@@ -1,13 +1,13 @@
 asset bundle.js 1.36 KiB [emitted] (name: main)
 ./app.ts 39 bytes [built] [code generated] [3 errors]
 
-ERROR in tsconfig.json
-./app.ts tsconfig.json
+ERROR in ./app.ts
+Module Error (from ../../index.js):
 [90m[tsl] [39m[1m[31mERROR[39m[22m
 [1m[31m      TS5024: Compiler option 'sourceMap' requires a value of type boolean.[39m[22m
 
-ERROR in tsconfig.json
-./app.ts tsconfig.json
+ERROR in ./app.ts
+Module Error (from ../../index.js):
 [90m[tsl] [39m[1m[31mERROR[39m[22m
 [1m[31m      TS6046: Argument for '--target' option must be: 'es5', 'es6', 'es2015', 'es2016', 'es2017', 'es2018', 'es2019', 'es2020', 'es2021', 'es2022', 'es2023', 'es2024', 'esnext'.[39m[22m
 

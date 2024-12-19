@@ -4,9 +4,21 @@ asset lib/fileWithError.js 141 bytes [emitted]
 cached modules 480 bytes [cached] 3 modules
 ./app.ts 223 bytes [built] [1 error]
 
-ERROR in ./app.ts 2:4-10
+ERROR in ./app.ts
+Module Error (from ../../index.js):
 [90m[tsl] [39m[1m[31mERROR[39m[22m[1m[31m in [39m[22m[1m[36mindirectWithError/fileWithError.ts(2,5)[39m[22m
 [1m[31m      TS2322: Type 'boolean' is not assignable to type 'string'.[39m[22m
-ts-loader-default_8f3b13c212135902
+Error: [90m[tsl] [39m[1m[31mERROR[39m[22m[1m[31m in [39m[22m[1m[36mindirectWithError/fileWithError.ts(2,5)[39m[22m
+[1m[31m      TS2322: Type 'boolean' is not assignable to type 'string'.[39m[22m
+    at makeError (dist/utils.js:105:19)
+    at dist/utils.js:77:27
+    at Array.map (<anonymous>)
+    at formatErrors (dist/utils.js:60:14)
+    at dist/servicesHost.js:716:146
+    at Array.forEach (<anonymous>)
+    at getSolutionErrors (dist/servicesHost.js:716:66)
+    at reportTranspileErrors (dist/instances.js:319:69)
+    at successLoader (dist/index.js:27:43)
+    at Object.loader (dist/index.js:23:5)
 
 webpack compiled with 1 error

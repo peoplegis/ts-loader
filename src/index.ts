@@ -665,7 +665,15 @@ function getTranspilationEmit(
       loaderContext.context
     );
 
-    errors.forEach(error => module!.addError(error));
+    errors.forEach(rawError => {
+      const error = new Error(rawError.message);
+
+      if (rawError.stack) {
+        error.stack = rawError.stack;
+      }
+
+      loaderContext.emitError(error);
+    });
   }
 
   return { outputText, sourceMapText };

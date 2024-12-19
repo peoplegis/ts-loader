@@ -163,7 +163,6 @@ function successfulTypeScriptInstance(
     }
   }
 
-  const module = loader._module!;
   const basePath = loaderOptions.context || path.dirname(configFilePath || '');
   const configParseResult = getConfigParseResult(
     compiler,
@@ -183,7 +182,15 @@ function successfulTypeScriptInstance(
       loader.context
     );
 
-    errors.forEach(error => module.addError(error));
+    errors.forEach(rawError => {
+      const error = new Error(rawError.message);
+
+      if (rawError.stack) {
+        error.stack = rawError.stack;
+      }
+
+      loader.emitError(error);
+    });
 
     return {
       error: makeError(
@@ -483,7 +490,6 @@ export function reportTranspileErrors(
   if (!instance.reportTranspileErrors) {
     return;
   }
-  const module = loader._module;
   instance.reportTranspileErrors = false;
   // happypack does not have _module.errors - see https://github.com/TypeStrong/ts-loader/issues/336
   if (!instance.loaderOptions.happyPackMode) {
@@ -501,7 +507,15 @@ export function reportTranspileErrors(
       loader.context
     );
 
-    [...solutionErrors, ...errors].forEach(error => module!.addError(error));
+    [...solutionErrors, ...errors].forEach(rawError => {
+      const error = new Error(rawError.message);
+
+      if (rawError.stack) {
+        error.stack = rawError.stack;
+      }
+
+      loader.emitError(error);
+    });
   }
 }
 
